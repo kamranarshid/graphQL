@@ -11,7 +11,7 @@ const mocks = {
   }),
   Track: () => ({
     id: () => "track_01",
-    title: () => "Astro Kitty, Space Explorer",
+    title: () => "Astor Kitty, Space Explorer",
     author: () => {
       return {
         name: "Grumpy Cat",
@@ -34,7 +34,8 @@ async function startApolloServer() {
     }),
   });
 
-  const { url } = await startStandaloneServer(server);
+  //const { url } = await startStandaloneServer(server);
+  const { url } = await startStandaloneServer({ host: '0.0.0.0' }, server);
   console.log(`Server is running at ${url}`);
 }
 
